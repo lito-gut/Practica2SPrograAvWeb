@@ -47,3 +47,16 @@ BEGIN
     WHERE Marca = @Marca
 END
 GO
+
+CREATE PROCEDURE sp_VerificarVendedor
+    @Cedula VARCHAR(50)
+AS
+BEGIN
+    SELECT COUNT(1) FROM Vendedores WHERE Cedula = @Cedula
+END
+
+CREATE PROCEDURE sp_ObtenerIdsVendedores
+AS
+BEGIN
+    SELECT IdVendedor, Nombre FROM Vendedores WHERE Estado = 1
+END
